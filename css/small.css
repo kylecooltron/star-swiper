@@ -1,0 +1,241 @@
+
+
+body{
+  background-color: rgb(6, 14, 51);
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+.app-container
+{
+  text-align: center;
+  width: 100%;
+  user-select: none;
+}
+
+
+#game
+{
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  max-width: 600px;
+  height:80vh;
+  margin: 0.5em auto 2em;
+  user-select: none;
+}
+
+#menu
+{
+  position: relative;
+}
+
+.fixed-message
+{
+  font-size: 2.5em;
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+#start-btn
+{
+  cursor: pointer;
+}
+
+.fixed-upper-left
+{
+  font-size: 2.5em;
+  position: fixed;
+  /* top: 1em;
+  left: 1em; */
+  padding: 0.1em 0.4em;
+  color: rgb(179, 0, 0);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+}
+
+@keyframes star-spinning {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+@keyframes star-creating {
+  from {
+      transform:scale(0.1) rotate(300deg);
+  }
+  to {
+      transform:scale(1) rotate(360deg);
+  }
+}
+
+@keyframes star-exploding {
+  from {
+      transform:scale(1) rotate(0deg);
+      filter: saturate(100%) hue-rotate(0);
+  }
+  to {
+      transform:scale(4) rotate(300deg);
+      opacity: 0;
+      filter: saturate(1000%) hue-rotate(-100deg);
+  }
+}
+
+@keyframes star-fading {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.star{
+  position: fixed;
+  user-select: none;
+  pointer-events: none;
+}
+
+.star-creating{
+  animation-name: star-creating;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear; 
+}
+
+.star-spinning{
+  animation-name: star-spinning;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+.star-exploding{
+  animation-name: star-exploding;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear; 
+}
+
+.star-fading{
+  animation-name: star-fading;
+  animation-duration: 5000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear; 
+}
+
+/* .star-fast-fading
+{
+  transition: opacity 1s;
+  opacity: 1;
+}
+.star-translucent
+{
+  opacity: 0;
+} */
+
+#score{
+  height: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  margin: 0.5em 0;
+}
+
+h1{
+  height: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: aqua;
+  margin: 0;
+}
+
+.logo-box img
+{
+  margin: 0;
+}
+
+#high-score
+{
+  text-align: center;
+}
+#high-score button
+{
+  padding: 0.2em 0.8em;
+  font-size: large;
+  border: 1px solid rgb(105, 105, 105);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 1.5em;
+}
+
+#high-score button:hover
+{
+  border: 1px solid rgb(240, 240, 240);
+}
+
+#high-score h2
+{
+  font-size: 0.7em;
+  width: 400px;
+  margin: 0.5em auto;
+}
+
+#high-score-list input
+{
+  width: 80%;
+  background-color: rgb(13, 25, 65);
+  color: white;
+  border: 1px solid rgb(44, 44, 44);
+  border-radius: 3px;
+  font-size: 0.8em;
+  padding: 0.15em 0.4em;
+}
+#high-score-list
+{
+  padding: 0.5em;
+  font-size: 0.9em;
+  /* border: 1px solid red; */
+  background-color: rgb(13, 25, 65);
+  width: 80%;
+  margin: 0 auto;
+  /* font-size: large; */
+}
+#high-score-list th
+{
+  font-size: 0.8em;
+  text-decoration: underline;
+  width: 200px;
+}
+#high-score-list td
+{
+  padding: 0.3em 0.1em;
+  /* align-items: center; */
+  /* border: 1px solid rgb(24, 216, 40); */
+  font-size: 0.7em;
+}
+
+#high-score-list th{
+  font-weight: bold;
+} 
+
+footer 
+{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2em;
+  max-width: 600px;
+  margin: 0 auto;
+}
